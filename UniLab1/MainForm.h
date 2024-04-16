@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 namespace UniLab1 {
 
@@ -27,11 +27,11 @@ namespace UniLab1 {
 		}
 	}
 
-			 // Пользовательские поля
-	private: unsigned short int n1;								// Глобальная переменная, используемая для передачи в рекурсивную функцию значения из поля ввода, в области 1 и 2 рекурсии первой программы
-	private: unsigned int count = 0;							// Глобальная переменная, используемая для фиксации количества рекурсивных вызовов в первой программе
-	private: bool choiceСheck;									// Булевая переменная, отображающая выбранную рекурсию в первой программе
-	private: array<UInt32>^ arr = gcnew array<UInt32>(250);		// Массив int, используемый для фиксирования введенной последовательности, в области второй программы
+			 // РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ РїРѕР»СЏ
+	private: unsigned short int n1;								// Р“Р»РѕР±Р°Р»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ, РёСЃРїРѕР»СЊР·СѓРµРјР°СЏ РґР»СЏ РїРµСЂРµРґР°С‡Рё РІ СЂРµРєСѓСЂСЃРёРІРЅСѓСЋ С„СѓРЅРєС†РёСЋ Р·РЅР°С‡РµРЅРёСЏ РёР· РїРѕР»СЏ РІРІРѕРґР°, РІ РѕР±Р»Р°СЃС‚Рё 1 Рё 2 СЂРµРєСѓСЂСЃРёРё РїРµСЂРІРѕР№ РїСЂРѕРіСЂР°РјРјС‹
+	private: unsigned int count = 0;							// Р“Р»РѕР±Р°Р»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ, РёСЃРїРѕР»СЊР·СѓРµРјР°СЏ РґР»СЏ С„РёРєСЃР°С†РёРё РєРѕР»РёС‡РµСЃС‚РІР° СЂРµРєСѓСЂСЃРёРІРЅС‹С… РІС‹Р·РѕРІРѕРІ РІ РїРµСЂРІРѕР№ РїСЂРѕРіСЂР°РјРјРµ
+	private: bool choiceРЎheck;									// Р‘СѓР»РµРІР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ, РѕС‚РѕР±СЂР°Р¶Р°СЋС‰Р°СЏ РІС‹Р±СЂР°РЅРЅСѓСЋ СЂРµРєСѓСЂСЃРёСЋ РІ РїРµСЂРІРѕР№ РїСЂРѕРіСЂР°РјРјРµ
+	private: array<UInt32>^ arr = gcnew array<UInt32>(250);		// РњР°СЃСЃРёРІ int, РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РґР»СЏ С„РёРєСЃРёСЂРѕРІР°РЅРёСЏ РІРІРµРґРµРЅРЅРѕР№ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚Рё, РІ РѕР±Р»Р°СЃС‚Рё РІС‚РѕСЂРѕР№ РїСЂРѕРіСЂР°РјРјС‹
 	private: System::Windows::Forms::Label^ fieldLabel1;
 
 
@@ -122,7 +122,7 @@ namespace UniLab1 {
 			this->fieldLabel1->Name = L"fieldLabel1";
 			this->fieldLabel1->Size = System::Drawing::Size(69, 14);
 			this->fieldLabel1->TabIndex = 0;
-			this->fieldLabel1->Text = L"Поле ввода:";
+			this->fieldLabel1->Text = L"РџРѕР»Рµ РІРІРѕРґР°:";
 			// 
 			// radioLabel
 			// 
@@ -133,7 +133,7 @@ namespace UniLab1 {
 			this->radioLabel->Name = L"radioLabel";
 			this->radioLabel->Size = System::Drawing::Size(102, 14);
 			this->radioLabel->TabIndex = 2;
-			this->radioLabel->Text = L"Вариант рекурсии:";
+			this->radioLabel->Text = L"Р’Р°СЂРёР°РЅС‚ СЂРµРєСѓСЂСЃРёРё:";
 			// 
 			// progLabel1
 			// 
@@ -147,7 +147,7 @@ namespace UniLab1 {
 			this->progLabel1->Name = L"progLabel1";
 			this->progLabel1->Size = System::Drawing::Size(156, 18);
 			this->progLabel1->TabIndex = 8;
-			this->progLabel1->Text = L"Первая программа";
+			this->progLabel1->Text = L"РџРµСЂРІР°СЏ РїСЂРѕРіСЂР°РјРјР°";
 			// 
 			// formulaLabel
 			// 
@@ -160,7 +160,7 @@ namespace UniLab1 {
 			this->formulaLabel->Name = L"formulaLabel";
 			this->formulaLabel->Size = System::Drawing::Size(329, 13);
 			this->formulaLabel->TabIndex = 10;
-			this->formulaLabel->Text = L"Здесь будет отображаться выбранный Вами вариант рекурсии";
+			this->formulaLabel->Text = L"Р—РґРµСЃСЊ Р±СѓРґРµС‚ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ РІС‹Р±СЂР°РЅРЅС‹Р№ Р’Р°РјРё РІР°СЂРёР°РЅС‚ СЂРµРєСѓСЂСЃРёРё";
 			// 
 			// resultLabel
 			// 
@@ -171,7 +171,7 @@ namespace UniLab1 {
 			this->resultLabel->Name = L"resultLabel";
 			this->resultLabel->Size = System::Drawing::Size(62, 14);
 			this->resultLabel->TabIndex = 13;
-			this->resultLabel->Text = L"Результат:";
+			this->resultLabel->Text = L"Р РµР·СѓР»СЊС‚Р°С‚:";
 			// 
 			// countLabel
 			// 
@@ -182,7 +182,7 @@ namespace UniLab1 {
 			this->countLabel->Name = L"countLabel";
 			this->countLabel->Size = System::Drawing::Size(236, 14);
 			this->countLabel->TabIndex = 14;
-			this->countLabel->Text = L"Количество вызовов рекурсиивной функции:";
+			this->countLabel->Text = L"РљРѕР»РёС‡РµСЃС‚РІРѕ РІС‹Р·РѕРІРѕРІ СЂРµРєСѓСЂСЃРёРёРІРЅРѕР№ С„СѓРЅРєС†РёРё:";
 			// 
 			// progBox1
 			// 
@@ -279,7 +279,7 @@ namespace UniLab1 {
 			this->infoBtn1->Name = L"infoBtn1";
 			this->infoBtn1->Size = System::Drawing::Size(99, 24);
 			this->infoBtn1->TabIndex = 17;
-			this->infoBtn1->Text = L"Информация";
+			this->infoBtn1->Text = L"РРЅС„РѕСЂРјР°С†РёСЏ";
 			this->infoBtn1->UseVisualStyleBackColor = false;
 			this->infoBtn1->Click += gcnew System::EventHandler(this, &MainForm::infoBtn1_Click);
 			// 
@@ -295,7 +295,7 @@ namespace UniLab1 {
 			this->startBtn1->Name = L"startBtn1";
 			this->startBtn1->Size = System::Drawing::Size(176, 46);
 			this->startBtn1->TabIndex = 16;
-			this->startBtn1->Text = L"Запуск";
+			this->startBtn1->Text = L"Р—Р°РїСѓСЃРє";
 			this->startBtn1->UseVisualStyleBackColor = false;
 			this->startBtn1->Click += gcnew System::EventHandler(this, &MainForm::startBtn1_Click);
 			// 
@@ -309,7 +309,7 @@ namespace UniLab1 {
 			this->resetBtn1->Name = L"resetBtn1";
 			this->resetBtn1->Size = System::Drawing::Size(75, 46);
 			this->resetBtn1->TabIndex = 15;
-			this->resetBtn1->Text = L"Очистить поля";
+			this->resetBtn1->Text = L"РћС‡РёСЃС‚РёС‚СЊ РїРѕР»СЏ";
 			this->resetBtn1->UseVisualStyleBackColor = false;
 			this->resetBtn1->Click += gcnew System::EventHandler(this, &MainForm::resetBtn1_Click);
 			// 
@@ -345,7 +345,7 @@ namespace UniLab1 {
 			this->fieldLabel2->Name = L"fieldLabel2";
 			this->fieldLabel2->Size = System::Drawing::Size(69, 14);
 			this->fieldLabel2->TabIndex = 37;
-			this->fieldLabel2->Text = L"Поле ввода:";
+			this->fieldLabel2->Text = L"РџРѕР»Рµ РІРІРѕРґР°:";
 			// 
 			// textField2
 			// 
@@ -364,7 +364,7 @@ namespace UniLab1 {
 			this->errorTestBtn->Name = L"errorTestBtn";
 			this->errorTestBtn->Size = System::Drawing::Size(324, 24);
 			this->errorTestBtn->TabIndex = 36;
-			this->errorTestBtn->Text = L"Протестировать программы на наличие ошибок";
+			this->errorTestBtn->Text = L"РџСЂРѕС‚РµСЃС‚РёСЂРѕРІР°С‚СЊ РїСЂРѕРіСЂР°РјРјС‹ РЅР° РЅР°Р»РёС‡РёРµ РѕС€РёР±РѕРє";
 			this->errorTestBtn->UseVisualStyleBackColor = false;
 			// 
 			// groupBox4
@@ -379,7 +379,7 @@ namespace UniLab1 {
 			this->groupBox4->Size = System::Drawing::Size(86, 157);
 			this->groupBox4->TabIndex = 35;
 			this->groupBox4->TabStop = false;
-			this->groupBox4->Text = L"Вывод";
+			this->groupBox4->Text = L"Р’С‹РІРѕРґ";
 			// 
 			// outputLabel
 			// 
@@ -402,7 +402,7 @@ namespace UniLab1 {
 			this->groupBox3->Size = System::Drawing::Size(86, 157);
 			this->groupBox3->TabIndex = 34;
 			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"Ввод";
+			this->groupBox3->Text = L"Р’РІРѕРґ";
 			// 
 			// inputLabel
 			// 
@@ -424,7 +424,7 @@ namespace UniLab1 {
 			this->infoBtn2->Name = L"infoBtn2";
 			this->infoBtn2->Size = System::Drawing::Size(99, 24);
 			this->infoBtn2->TabIndex = 18;
-			this->infoBtn2->Text = L"Информация";
+			this->infoBtn2->Text = L"РРЅС„РѕСЂРјР°С†РёСЏ";
 			this->infoBtn2->UseVisualStyleBackColor = false;
 			this->infoBtn2->Click += gcnew System::EventHandler(this, &MainForm::infoBtn2_Click);
 			// 
@@ -438,7 +438,7 @@ namespace UniLab1 {
 			this->inputBtn->Name = L"inputBtn";
 			this->inputBtn->Size = System::Drawing::Size(102, 33);
 			this->inputBtn->TabIndex = 30;
-			this->inputBtn->Text = L"Ввести";
+			this->inputBtn->Text = L"Р’РІРµСЃС‚Рё";
 			this->inputBtn->UseVisualStyleBackColor = false;
 			this->inputBtn->Click += gcnew System::EventHandler(this, &MainForm::inputBtn_Click);
 			// 
@@ -452,7 +452,7 @@ namespace UniLab1 {
 			this->startBtn2->Name = L"startBtn2";
 			this->startBtn2->Size = System::Drawing::Size(218, 89);
 			this->startBtn2->TabIndex = 28;
-			this->startBtn2->Text = L"Запуск";
+			this->startBtn2->Text = L"Р—Р°РїСѓСЃРє";
 			this->startBtn2->UseVisualStyleBackColor = false;
 			this->startBtn2->Click += gcnew System::EventHandler(this, &MainForm::startBtn2_Click);
 			// 
@@ -466,7 +466,7 @@ namespace UniLab1 {
 			this->resetBtn2->Name = L"resetBtn2";
 			this->resetBtn2->Size = System::Drawing::Size(110, 33);
 			this->resetBtn2->TabIndex = 27;
-			this->resetBtn2->Text = L"Очистить поля";
+			this->resetBtn2->Text = L"РћС‡РёСЃС‚РёС‚СЊ РїРѕР»СЏ";
 			this->resetBtn2->UseVisualStyleBackColor = false;
 			this->resetBtn2->Click += gcnew System::EventHandler(this, &MainForm::resetBtn2_Click);
 			// 
@@ -482,7 +482,7 @@ namespace UniLab1 {
 			this->progLabel2->Name = L"progLabel2";
 			this->progLabel2->Size = System::Drawing::Size(155, 18);
 			this->progLabel2->TabIndex = 20;
-			this->progLabel2->Text = L"Вторая программа";
+			this->progLabel2->Text = L"Р’С‚РѕСЂР°СЏ РїСЂРѕРіСЂР°РјРјР°";
 			// 
 			// MainForm
 			// 
@@ -501,7 +501,7 @@ namespace UniLab1 {
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Лабораторная работа №1 - Рекурсия";
+			this->Text = L"Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ СЂР°Р±РѕС‚Р° в„–1 - Р РµРєСѓСЂСЃРёСЏ";
 			this->progBox1->ResumeLayout(false);
 			this->progBox1->PerformLayout();
 			this->progBox2->ResumeLayout(false);
@@ -551,14 +551,14 @@ namespace UniLab1 {
 	}
 
 	private: array<int>^ ConvertToIntegerArrayRecursive(array<String^>^ strings, int index) {
-		// Базовый случай: если индекс вышел за границы массива, возвращаем пустой массив.
+		// Р‘Р°Р·РѕРІС‹Р№ СЃР»СѓС‡Р°Р№: РµСЃР»Рё РёРЅРґРµРєСЃ РІС‹С€РµР» Р·Р° РіСЂР°РЅРёС†С‹ РјР°СЃСЃРёРІР°, РІРѕР·РІСЂР°С‰Р°РµРј РїСѓСЃС‚РѕР№ РјР°СЃСЃРёРІ.
 		if (index >= strings->Length)
 			return gcnew array<int>(0);
 
-		// Рекурсивный случай: конвертируем текущую строку в число и вызываем функцию для следующей строки.
+		// Р РµРєСѓСЂСЃРёРІРЅС‹Р№ СЃР»СѓС‡Р°Р№: РєРѕРЅРІРµСЂС‚РёСЂСѓРµРј С‚РµРєСѓС‰СѓСЋ СЃС‚СЂРѕРєСѓ РІ С‡РёСЃР»Рѕ Рё РІС‹Р·С‹РІР°РµРј С„СѓРЅРєС†РёСЋ РґР»СЏ СЃР»РµРґСѓСЋС‰РµР№ СЃС‚СЂРѕРєРё.
 		array<int>^ convertedArray = ConvertToIntegerArrayRecursive(strings, index + 1);
 
-		// Конвертируем текущую строку в число и добавляем его в начало результирующего массива.
+		// РљРѕРЅРІРµСЂС‚РёСЂСѓРµРј С‚РµРєСѓС‰СѓСЋ СЃС‚СЂРѕРєСѓ РІ С‡РёСЃР»Рѕ Рё РґРѕР±Р°РІР»СЏРµРј РµРіРѕ РІ РЅР°С‡Р°Р»Рѕ СЂРµР·СѓР»СЊС‚РёСЂСѓСЋС‰РµРіРѕ РјР°СЃСЃРёРІР°.
 		int number = System::Convert::ToInt32(strings[index]);
 		array<int>^ result = gcnew array<int>(convertedArray->Length + 1);
 		result[0] = number;
@@ -571,8 +571,8 @@ namespace UniLab1 {
 	private: bool validatyCheckFor1() {
 
 		String^ errorOverFlow = "";
-		String^ errorOverFlow1 = "В целях безопасноси для рекурсии первого вида программа не принимает значения выше 51.";
-		String^ errorOverFlow2 = "При выборе первого варианта рекурсивной функции вводимое значение, которое больше единицы, должно быть нечётным.";
+		String^ errorOverFlow1 = "Р’ С†РµР»СЏС… Р±РµР·РѕРїР°СЃРЅРѕСЃРё РґР»СЏ СЂРµРєСѓСЂСЃРёРё РїРµСЂРІРѕРіРѕ РІРёРґР° РїСЂРѕРіСЂР°РјРјР° РЅРµ РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёСЏ РІС‹С€Рµ 51.";
+		String^ errorOverFlow2 = "РџСЂРё РІС‹Р±РѕСЂРµ РїРµСЂРІРѕРіРѕ РІР°СЂРёР°РЅС‚Р° СЂРµРєСѓСЂСЃРёРІРЅРѕР№ С„СѓРЅРєС†РёРё РІРІРѕРґРёРјРѕРµ Р·РЅР°С‡РµРЅРёРµ, РєРѕС‚РѕСЂРѕРµ Р±РѕР»СЊС€Рµ РµРґРёРЅРёС†С‹, РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµС‡С‘С‚РЅС‹Рј.";
 
 		try {
 
@@ -592,7 +592,7 @@ namespace UniLab1 {
 		}
 		catch (String^ errorOverFlow) {
 			this->textField1->ForeColor = Color::Red;
-			System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 			if (result == System::Windows::Forms::DialogResult::OK)
 			{
@@ -608,8 +608,8 @@ namespace UniLab1 {
 	private: bool validatyCheckFor2() {
 
 		String^ errorOverFlow = "";
-		String^ errorOverFlow1 = "В целях безопасноси для рекурсии второго вида программа не принимает значения выше 80.";
-		String^ errorOverFlow2 = "При выборе второй рекурсивной функции вводимое значение должно быть не меньше единицы.";
+		String^ errorOverFlow1 = "Р’ С†РµР»СЏС… Р±РµР·РѕРїР°СЃРЅРѕСЃРё РґР»СЏ СЂРµРєСѓСЂСЃРёРё РІС‚РѕСЂРѕРіРѕ РІРёРґР° РїСЂРѕРіСЂР°РјРјР° РЅРµ РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёСЏ РІС‹С€Рµ 80.";
+		String^ errorOverFlow2 = "РџСЂРё РІС‹Р±РѕСЂРµ РІС‚РѕСЂРѕР№ СЂРµРєСѓСЂСЃРёРІРЅРѕР№ С„СѓРЅРєС†РёРё РІРІРѕРґРёРјРѕРµ Р·РЅР°С‡РµРЅРёРµ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РЅРµ РјРµРЅСЊС€Рµ РµРґРёРЅРёС†С‹.";
 
 		try {
 			if (this->radioBtn2->Checked == true && this->textField1->Text != "") {
@@ -628,7 +628,7 @@ namespace UniLab1 {
 		}
 		catch (String^ errorOverFlow) {
 			this->textField1->ForeColor = Color::Red;
-			System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
 			if (result == System::Windows::Forms::DialogResult::OK) {
 				this->textField1->Text = "";
@@ -649,11 +649,11 @@ namespace UniLab1 {
 		}
 
 		if (this->radioBtn1->Checked == true) {
-			this->formulaLabel->Text = "F(n) = 2, при n <=1;\nF(n) = 1 + F(n - 1) * F(n - 2) - F(n - 1) - F(n - 2), если n > 1 и при этом n нечётно;";
-			choiceСheck = true;
+			this->formulaLabel->Text = "F(n) = 2, РїСЂРё n <=1;\nF(n) = 1 + F(n - 1) * F(n - 2) - F(n - 1) - F(n - 2), РµСЃР»Рё n > 1 Рё РїСЂРё СЌС‚РѕРј n РЅРµС‡С‘С‚РЅРѕ;";
+			choiceРЎheck = true;
 		}
 		else {
-			this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
+			this->formulaLabel->Text = "Р—РґРµСЃСЊ Р±СѓРґРµС‚ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ РІС‹Р±СЂР°РЅРЅС‹Р№ Р’Р°РјРё РІР°СЂРёР°РЅС‚ СЂРµРєСѓСЂСЃРёРё";
 		}
 
 	}
@@ -667,11 +667,11 @@ namespace UniLab1 {
 		}
 
 		if (this->radioBtn2->Checked == true) {
-			this->formulaLabel->Text = "F(n) = 1, при n = 1;\nF(n) = 2, при n = 2;\nF(n) = [(7 * n + F(n - 3)) / 9], если n > 2 и при этом n четно\nF(n) = [(5 * n + F(n - 1) + F(n - 2)) / 7], если n > 2 и при этом n";
-			choiceСheck = false;
+			this->formulaLabel->Text = "F(n) = 1, РїСЂРё n = 1;\nF(n) = 2, РїСЂРё n = 2;\nF(n) = [(7 * n + F(n - 3)) / 9], РµСЃР»Рё n > 2 Рё РїСЂРё СЌС‚РѕРј n С‡РµС‚РЅРѕ\nF(n) = [(5 * n + F(n - 1) + F(n - 2)) / 7], РµСЃР»Рё n > 2 Рё РїСЂРё СЌС‚РѕРј n";
+			choiceРЎheck = false;
 		}
 		else {
-			this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
+			this->formulaLabel->Text = "Р—РґРµСЃСЊ Р±СѓРґРµС‚ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ РІС‹Р±СЂР°РЅРЅС‹Р№ Р’Р°РјРё РІР°СЂРёР°РЅС‚ СЂРµРєСѓСЂСЃРёРё";
 		}
 
 	}
@@ -687,12 +687,12 @@ namespace UniLab1 {
 		count = 0;
 
 		if (this->textField1->Text == "") {
-			MessageBox::Show("Введите значение в \"Поле ввода\" для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ РІ \"РџРѕР»Рµ РІРІРѕРґР°\" РґР»СЏ РЅР°С‡Р°Р»Р° РїРѕРґСЃС‡РµС‚Р°.", "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
 		if (this->radioBtn1->Checked == false && this->radioBtn2->Checked == false) {
-			MessageBox::Show("Выберите один из двух вариантов рекурсии для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Р’С‹Р±РµСЂРёС‚Рµ РѕРґРёРЅ РёР· РґРІСѓС… РІР°СЂРёР°РЅС‚РѕРІ СЂРµРєСѓСЂСЃРёРё РґР»СЏ РЅР°С‡Р°Р»Р° РїРѕРґСЃС‡РµС‚Р°.", "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
@@ -700,7 +700,7 @@ namespace UniLab1 {
 			this->n1 = System::Convert::ToInt32(this->textField1->Text);
 			if (this->radioBtn1->Checked || this->radioBtn2->Checked)
 			{
-				if (choiceСheck == true)
+				if (choiceРЎheck == true)
 				{
 					this->resultNum->Text = System::Convert::ToString(recursion1(n1));
 					this->countNum->Text = System::Convert::ToString(count);
@@ -717,7 +717,7 @@ namespace UniLab1 {
 
 	private: System::Void resetBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->textField1->Text = "";
-		this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
+		this->formulaLabel->Text = "Р—РґРµСЃСЊ Р±СѓРґРµС‚ РѕС‚РѕР±СЂР°Р¶Р°С‚СЊСЃСЏ РІС‹Р±СЂР°РЅРЅС‹Р№ Р’Р°РјРё РІР°СЂРёР°РЅС‚ СЂРµРєСѓСЂСЃРёРё";
 		this->resultNum->Text = "";
 		this->countNum->Text = "";
 		this->radioBtn1->Checked = false;
@@ -725,18 +725,18 @@ namespace UniLab1 {
 	}
 
 	private: System::Void infoBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Работа с первой программой\n\nДля работы с рекурсивными функциями:\r\n\r\n1. Введите данные.\n    Для ввода значений введите данные в поле ввода.\n    Максимальное значение для первой рекурсии - 51.\n    Максимальное значение для второй рекурсии - 80.\r\n\r\n2. Выберите вариант рекурсивной функции.\n    После выбора рекурсии ниже будет выведена\n    формула выбранной Вами рекурсивной функции.\r\n\r\n3. Запустите программу.\n    Нажмине кнопку \"Запуск\" для запуска рекурсии.\r\n\r\nПосле запуска рекурсии будет выведен результат рекурсивных вычислений и количество вызовов рекурсивной функции.\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторите вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		MessageBox::Show("Р Р°Р±РѕС‚Р° СЃ РїРµСЂРІРѕР№ РїСЂРѕРіСЂР°РјРјРѕР№\n\nР”Р»СЏ СЂР°Р±РѕС‚С‹ СЃ СЂРµРєСѓСЂСЃРёРІРЅС‹РјРё С„СѓРЅРєС†РёСЏРјРё:\r\n\r\n1. Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ.\n    Р”Р»СЏ РІРІРѕРґР° Р·РЅР°С‡РµРЅРёР№ РІРІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ РІ РїРѕР»Рµ РІРІРѕРґР°.\n    РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РїРµСЂРІРѕР№ СЂРµРєСѓСЂСЃРёРё - 51.\n    РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РІС‚РѕСЂРѕР№ СЂРµРєСѓСЂСЃРёРё - 80.\r\n\r\n2. Р’С‹Р±РµСЂРёС‚Рµ РІР°СЂРёР°РЅС‚ СЂРµРєСѓСЂСЃРёРІРЅРѕР№ С„СѓРЅРєС†РёРё.\n    РџРѕСЃР»Рµ РІС‹Р±РѕСЂР° СЂРµРєСѓСЂСЃРёРё РЅРёР¶Рµ Р±СѓРґРµС‚ РІС‹РІРµРґРµРЅР°\n    С„РѕСЂРјСѓР»Р° РІС‹Р±СЂР°РЅРЅРѕР№ Р’Р°РјРё СЂРµРєСѓСЂСЃРёРІРЅРѕР№ С„СѓРЅРєС†РёРё.\r\n\r\n3. Р—Р°РїСѓСЃС‚РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ.\n    РќР°Р¶РјРёРЅРµ РєРЅРѕРїРєСѓ \"Р—Р°РїСѓСЃРє\" РґР»СЏ Р·Р°РїСѓСЃРєР° СЂРµРєСѓСЂСЃРёРё.\r\n\r\nРџРѕСЃР»Рµ Р·Р°РїСѓСЃРєР° СЂРµРєСѓСЂСЃРёРё Р±СѓРґРµС‚ РІС‹РІРµРґРµРЅ СЂРµР·СѓР»СЊС‚Р°С‚ СЂРµРєСѓСЂСЃРёРІРЅС‹С… РІС‹С‡РёСЃР»РµРЅРёР№ Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РІС‹Р·РѕРІРѕРІ СЂРµРєСѓСЂСЃРёРІРЅРѕР№ С„СѓРЅРєС†РёРё.\r\n\r\nР”Р»СЏ РїРѕРІС‚РѕСЂРЅРѕРіРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹ РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ \"РћС‡РёСЃС‚РёС‚СЊ РїРѕР»СЏ\" Рё РїРѕРІС‚РѕСЂРёС‚Рµ РІС‹С€РµРїРµСЂРµС‡РёСЃР»РµРЅРЅС‹Рµ РґРµР№СЃС‚РІРёСЏ.", "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂР°Р±РѕС‚Рµ РїСЂРѕРіСЂР°РјРјС‹", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
 
 	private:System::Void inputBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (this->textField1->Text == " ") {
-			MessageBox::Show("Введите значение элемента массива в \"Поле ввода\" прежде чем нажать на кнопку \"Ввести\" .", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР° РІ \"РџРѕР»Рµ РІРІРѕРґР°\" РїСЂРµР¶РґРµ С‡РµРј РЅР°Р¶Р°С‚СЊ РЅР° РєРЅРѕРїРєСѓ \"Р’РІРµСЃС‚Рё\" .", "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
 		if (inputLabel->Text->Split('\n')->Length - 1 >= 9) {
-			MessageBox::Show("Максимальное количество элементов в массиве достигнуто.", "Предупреждение", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show("РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ РґРѕСЃС‚РёРіРЅСѓС‚Рѕ.", "РџСЂРµРґСѓРїСЂРµР¶РґРµРЅРёРµ", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			return;
 		}
 
@@ -745,7 +745,7 @@ namespace UniLab1 {
 			this->textField2->Text = "";
 
 			if (inputLabel->Text->Split('\n')->Length - 1 == 8 && num != 0) {
-				MessageBox::Show("Девятый введенный элемент должен быть нулем.", "Предупреждение", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				MessageBox::Show("Р”РµРІСЏС‚С‹Р№ РІРІРµРґРµРЅРЅС‹Р№ СЌР»РµРјРµРЅС‚ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ РЅСѓР»РµРј.", "РџСЂРµРґСѓРїСЂРµР¶РґРµРЅРёРµ", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 				return;
 			}
 
@@ -763,23 +763,23 @@ namespace UniLab1 {
 	private: System::Void startBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
 		array<String^>^ numbers = inputLabel->Text->Split(gcnew array<wchar_t> {'\n', '\r'}, StringSplitOptions::RemoveEmptyEntries);
 
-		// Обработка ошибок
+		// РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє
 		if (numbers->Length == 0) {
-			MessageBox::Show("Введите хотя бы один элемент для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Р’РІРµРґРёС‚Рµ С…РѕС‚СЏ Р±С‹ РѕРґРёРЅ СЌР»РµРјРµРЅС‚ РґР»СЏ РЅР°С‡Р°Р»Р° РїРѕРґСЃС‡РµС‚Р°.", "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
 		if (numbers[numbers->Length - 1] != "0") {
-			MessageBox::Show("Для начала подсчета нечетных элементов введите ноль в качестве последнего элемента массива.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			MessageBox::Show("Р”Р»СЏ РЅР°С‡Р°Р»Р° РїРѕРґСЃС‡РµС‚Р° РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РІРІРµРґРёС‚Рµ РЅРѕР»СЊ РІ РєР°С‡РµСЃС‚РІРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР°.", "РћС€РёР±РєР°", MessageBoxButtons::OK, MessageBoxIcon::Error);
 			return;
 		}
 
 		Array::Resize(numbers, numbers->Length - 1);
 
-		// Преобразование строк в целые числа с использованием рекурсивной функции
+		// РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ СЃС‚СЂРѕРє РІ С†РµР»С‹Рµ С‡РёСЃР»Р° СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј СЂРµРєСѓСЂСЃРёРІРЅРѕР№ С„СѓРЅРєС†РёРё
 		array<int>^ arr = ConvertToIntegerArray(numbers);
 
-		// Остальная часть кода без изменений
+		// РћСЃС‚Р°Р»СЊРЅР°СЏ С‡Р°СЃС‚СЊ РєРѕРґР° Р±РµР· РёР·РјРµРЅРµРЅРёР№
 		array<int>^ oddIndices = gcnew array<int>(arr->Length);
 		int oddCount = 0;
 
@@ -809,7 +809,7 @@ namespace UniLab1 {
 	}
 
 	private: System::Void infoBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Работа со второй программой\r\n\r\nДля работы с программой:\r\n\r\n1. Введите последовательность в поле ввода по одному\n    элементу.\r\n\r\n2. Чтобы добавить элемент в программу нажмите\n    кнопку \"Ввести\", после чего элемент будет добавлен\n    в поле\"Ввод\".\r\n\r\n3. Для запуска программы нажмите кнопку \"Запуск\".\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторие вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		MessageBox::Show("Р Р°Р±РѕС‚Р° СЃРѕ РІС‚РѕСЂРѕР№ РїСЂРѕРіСЂР°РјРјРѕР№\r\n\r\nР”Р»СЏ СЂР°Р±РѕС‚С‹ СЃ РїСЂРѕРіСЂР°РјРјРѕР№:\r\n\r\n1. Р’РІРµРґРёС‚Рµ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РІ РїРѕР»Рµ РІРІРѕРґР° РїРѕ РѕРґРЅРѕРјСѓ\n    СЌР»РµРјРµРЅС‚Сѓ.\r\n\r\n2. Р§С‚РѕР±С‹ РґРѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РІ РїСЂРѕРіСЂР°РјРјСѓ РЅР°Р¶РјРёС‚Рµ\n    РєРЅРѕРїРєСѓ \"Р’РІРµСЃС‚Рё\", РїРѕСЃР»Рµ С‡РµРіРѕ СЌР»РµРјРµРЅС‚ Р±СѓРґРµС‚ РґРѕР±Р°РІР»РµРЅ\n    РІ РїРѕР»Рµ\"Р’РІРѕРґ\".\r\n\r\n3. Р”Р»СЏ Р·Р°РїСѓСЃРєР° РїСЂРѕРіСЂР°РјРјС‹ РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ \"Р—Р°РїСѓСЃРє\".\r\n\r\nР”Р»СЏ РїРѕРІС‚РѕСЂРЅРѕРіРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РїСЂРѕРіСЂР°РјРјС‹ РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ \"РћС‡РёСЃС‚РёС‚СЊ РїРѕР»СЏ\" Рё РїРѕРІС‚РѕСЂРёРµ РІС‹С€РµРїРµСЂРµС‡РёСЃР»РµРЅРЅС‹Рµ РґРµР№СЃС‚РІРёСЏ.", "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂР°Р±РѕС‚Рµ РїСЂРѕРіСЂР°РјРјС‹", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
 
 	};
