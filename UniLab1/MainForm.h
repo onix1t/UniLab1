@@ -95,6 +95,7 @@ namespace UniLab1 {
 			this->startBtn1 = (gcnew System::Windows::Forms::Button());
 			this->resetBtn1 = (gcnew System::Windows::Forms::Button());
 			this->progBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->fieldLabel2 = (gcnew System::Windows::Forms::Label());
 			this->textField2 = (gcnew System::Windows::Forms::TextBox());
 			this->errorTestBtn = (gcnew System::Windows::Forms::Button());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
@@ -106,7 +107,6 @@ namespace UniLab1 {
 			this->startBtn2 = (gcnew System::Windows::Forms::Button());
 			this->resetBtn2 = (gcnew System::Windows::Forms::Button());
 			this->progLabel2 = (gcnew System::Windows::Forms::Label());
-			this->fieldLabel2 = (gcnew System::Windows::Forms::Label());
 			this->progBox1->SuspendLayout();
 			this->progBox2->SuspendLayout();
 			this->groupBox4->SuspendLayout();
@@ -117,9 +117,10 @@ namespace UniLab1 {
 			// 
 			this->fieldLabel1->AutoSize = true;
 			this->fieldLabel1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->fieldLabel1->Location = System::Drawing::Point(11, 49);
+			this->fieldLabel1->Location = System::Drawing::Point(13, 53);
+			this->fieldLabel1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->fieldLabel1->Name = L"fieldLabel1";
-			this->fieldLabel1->Size = System::Drawing::Size(69, 13);
+			this->fieldLabel1->Size = System::Drawing::Size(69, 14);
 			this->fieldLabel1->TabIndex = 0;
 			this->fieldLabel1->Text = L"Поле ввода:";
 			// 
@@ -127,9 +128,10 @@ namespace UniLab1 {
 			// 
 			this->radioLabel->AutoSize = true;
 			this->radioLabel->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->radioLabel->Location = System::Drawing::Point(11, 75);
+			this->radioLabel->Location = System::Drawing::Point(13, 81);
+			this->radioLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->radioLabel->Name = L"radioLabel";
-			this->radioLabel->Size = System::Drawing::Size(102, 13);
+			this->radioLabel->Size = System::Drawing::Size(102, 14);
 			this->radioLabel->TabIndex = 2;
 			this->radioLabel->Text = L"Вариант рекурсии:";
 			// 
@@ -138,8 +140,10 @@ namespace UniLab1 {
 			this->progLabel1->AutoSize = true;
 			this->progLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->progLabel1->ForeColor = System::Drawing::Color::DimGray;
-			this->progLabel1->Location = System::Drawing::Point(10, 16);
+			this->progLabel1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->progLabel1->Location = System::Drawing::Point(12, 17);
+			this->progLabel1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->progLabel1->Name = L"progLabel1";
 			this->progLabel1->Size = System::Drawing::Size(156, 18);
 			this->progLabel1->TabIndex = 8;
@@ -151,7 +155,8 @@ namespace UniLab1 {
 			this->formulaLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->formulaLabel->ForeColor = System::Drawing::SystemColors::ControlDarkDark;
-			this->formulaLabel->Location = System::Drawing::Point(11, 102);
+			this->formulaLabel->Location = System::Drawing::Point(13, 110);
+			this->formulaLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->formulaLabel->Name = L"formulaLabel";
 			this->formulaLabel->Size = System::Drawing::Size(329, 13);
 			this->formulaLabel->TabIndex = 10;
@@ -161,9 +166,10 @@ namespace UniLab1 {
 			// 
 			this->resultLabel->AutoSize = true;
 			this->resultLabel->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->resultLabel->Location = System::Drawing::Point(11, 166);
+			this->resultLabel->Location = System::Drawing::Point(13, 179);
+			this->resultLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->resultLabel->Name = L"resultLabel";
-			this->resultLabel->Size = System::Drawing::Size(62, 13);
+			this->resultLabel->Size = System::Drawing::Size(62, 14);
 			this->resultLabel->TabIndex = 13;
 			this->resultLabel->Text = L"Результат:";
 			// 
@@ -171,9 +177,10 @@ namespace UniLab1 {
 			// 
 			this->countLabel->AutoSize = true;
 			this->countLabel->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->countLabel->Location = System::Drawing::Point(11, 187);
+			this->countLabel->Location = System::Drawing::Point(13, 201);
+			this->countLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->countLabel->Name = L"countLabel";
-			this->countLabel->Size = System::Drawing::Size(236, 13);
+			this->countLabel->Size = System::Drawing::Size(236, 14);
 			this->countLabel->TabIndex = 14;
 			this->countLabel->Text = L"Количество вызовов рекурсиивной функции:";
 			// 
@@ -194,45 +201,52 @@ namespace UniLab1 {
 			this->progBox1->Controls->Add(this->fieldLabel1);
 			this->progBox1->Controls->Add(this->radioLabel);
 			this->progBox1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->progBox1->Location = System::Drawing::Point(12, 1);
+			this->progBox1->Font = (gcnew System::Drawing::Font(L"Lucida Fax", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->progBox1->Location = System::Drawing::Point(14, 1);
+			this->progBox1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->progBox1->Name = L"progBox1";
-			this->progBox1->Size = System::Drawing::Size(422, 214);
+			this->progBox1->Padding = System::Windows::Forms::Padding(4, 3, 4, 3);
+			this->progBox1->Size = System::Drawing::Size(492, 230);
 			this->progBox1->TabIndex = 15;
 			this->progBox1->TabStop = false;
 			// 
 			// countNum
 			// 
 			this->countNum->AutoSize = true;
-			this->countNum->Location = System::Drawing::Point(253, 188);
+			this->countNum->Location = System::Drawing::Point(295, 202);
+			this->countNum->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->countNum->Name = L"countNum";
-			this->countNum->Size = System::Drawing::Size(0, 13);
+			this->countNum->Size = System::Drawing::Size(0, 14);
 			this->countNum->TabIndex = 21;
 			// 
 			// resultNum
 			// 
 			this->resultNum->AutoSize = true;
-			this->resultNum->Location = System::Drawing::Point(79, 166);
+			this->resultNum->Location = System::Drawing::Point(92, 179);
+			this->resultNum->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->resultNum->Name = L"resultNum";
-			this->resultNum->Size = System::Drawing::Size(0, 13);
+			this->resultNum->Size = System::Drawing::Size(0, 14);
 			this->resultNum->TabIndex = 20;
 			// 
 			// textField1
 			// 
-			this->textField1->Location = System::Drawing::Point(86, 47);
+			this->textField1->Location = System::Drawing::Point(100, 51);
+			this->textField1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->textField1->Name = L"textField1";
-			this->textField1->Size = System::Drawing::Size(99, 20);
+			this->textField1->Size = System::Drawing::Size(115, 20);
 			this->textField1->TabIndex = 2;
 			this->textField1->TextChanged += gcnew System::EventHandler(this, &MainForm::textField1TextChanged);
 			// 
 			// radioBtn2
 			// 
 			this->radioBtn2->AutoSize = true;
-			this->radioBtn2->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->radioBtn2->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->radioBtn2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->radioBtn2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->radioBtn2->Location = System::Drawing::Point(156, 75);
+			this->radioBtn2->Location = System::Drawing::Point(182, 81);
+			this->radioBtn2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->radioBtn2->Name = L"radioBtn2";
-			this->radioBtn2->Size = System::Drawing::Size(30, 17);
+			this->radioBtn2->Size = System::Drawing::Size(37, 19);
 			this->radioBtn2->TabIndex = 19;
 			this->radioBtn2->TabStop = true;
 			this->radioBtn2->Text = L"2";
@@ -242,12 +256,12 @@ namespace UniLab1 {
 			// radioBtn1
 			// 
 			this->radioBtn1->AutoSize = true;
-			this->radioBtn1->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->radioBtn1->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->radioBtn1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->radioBtn1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->radioBtn1->Location = System::Drawing::Point(119, 75);
+			this->radioBtn1->Location = System::Drawing::Point(139, 81);
+			this->radioBtn1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->radioBtn1->Name = L"radioBtn1";
-			this->radioBtn1->Size = System::Drawing::Size(30, 17);
+			this->radioBtn1->Size = System::Drawing::Size(37, 19);
 			this->radioBtn1->TabIndex = 18;
 			this->radioBtn1->TabStop = true;
 			this->radioBtn1->Text = L"1";
@@ -260,9 +274,10 @@ namespace UniLab1 {
 			this->infoBtn1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->infoBtn1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->infoBtn1->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->infoBtn1->Location = System::Drawing::Point(331, 183);
+			this->infoBtn1->Location = System::Drawing::Point(386, 197);
+			this->infoBtn1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->infoBtn1->Name = L"infoBtn1";
-			this->infoBtn1->Size = System::Drawing::Size(85, 22);
+			this->infoBtn1->Size = System::Drawing::Size(99, 24);
 			this->infoBtn1->TabIndex = 17;
 			this->infoBtn1->Text = L"Информация";
 			this->infoBtn1->UseVisualStyleBackColor = false;
@@ -273,9 +288,12 @@ namespace UniLab1 {
 			this->startBtn1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->startBtn1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->startBtn1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->startBtn1->Location = System::Drawing::Point(265, 47);
+			this->startBtn1->Font = (gcnew System::Drawing::Font(L"Lucida Fax", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->startBtn1->Location = System::Drawing::Point(309, 51);
+			this->startBtn1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->startBtn1->Name = L"startBtn1";
-			this->startBtn1->Size = System::Drawing::Size(151, 43);
+			this->startBtn1->Size = System::Drawing::Size(176, 46);
 			this->startBtn1->TabIndex = 16;
 			this->startBtn1->Text = L"Запуск";
 			this->startBtn1->UseVisualStyleBackColor = false;
@@ -286,9 +304,10 @@ namespace UniLab1 {
 			this->resetBtn1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->resetBtn1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->resetBtn1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->resetBtn1->Location = System::Drawing::Point(193, 47);
+			this->resetBtn1->Location = System::Drawing::Point(225, 51);
+			this->resetBtn1->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->resetBtn1->Name = L"resetBtn1";
-			this->resetBtn1->Size = System::Drawing::Size(64, 43);
+			this->resetBtn1->Size = System::Drawing::Size(75, 46);
 			this->resetBtn1->TabIndex = 15;
 			this->resetBtn1->Text = L"Очистить поля";
 			this->resetBtn1->UseVisualStyleBackColor = false;
@@ -307,38 +326,57 @@ namespace UniLab1 {
 			this->progBox2->Controls->Add(this->resetBtn2);
 			this->progBox2->Controls->Add(this->progLabel2);
 			this->progBox2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->progBox2->Location = System::Drawing::Point(12, 221);
+			this->progBox2->Font = (gcnew System::Drawing::Font(L"Lucida Fax", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->progBox2->Location = System::Drawing::Point(14, 238);
+			this->progBox2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->progBox2->Name = L"progBox2";
-			this->progBox2->Size = System::Drawing::Size(422, 242);
+			this->progBox2->Padding = System::Windows::Forms::Padding(4, 3, 4, 3);
+			this->progBox2->Size = System::Drawing::Size(492, 261);
 			this->progBox2->TabIndex = 16;
 			this->progBox2->TabStop = false;
 			// 
+			// fieldLabel2
+			// 
+			this->fieldLabel2->AutoSize = true;
+			this->fieldLabel2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->fieldLabel2->Location = System::Drawing::Point(19, 58);
+			this->fieldLabel2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->fieldLabel2->Name = L"fieldLabel2";
+			this->fieldLabel2->Size = System::Drawing::Size(69, 14);
+			this->fieldLabel2->TabIndex = 37;
+			this->fieldLabel2->Text = L"Поле ввода:";
+			// 
 			// textField2
 			// 
-			this->textField2->Location = System::Drawing::Point(86, 51);
+			this->textField2->Location = System::Drawing::Point(100, 55);
+			this->textField2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->textField2->Name = L"textField2";
-			this->textField2->Size = System::Drawing::Size(120, 20);
+			this->textField2->Size = System::Drawing::Size(139, 20);
 			this->textField2->TabIndex = 21;
 			// 
 			// errorTestBtn
 			// 
 			this->errorTestBtn->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->errorTestBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->errorTestBtn->Location = System::Drawing::Point(19, 214);
+			this->errorTestBtn->Location = System::Drawing::Point(22, 230);
+			this->errorTestBtn->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->errorTestBtn->Name = L"errorTestBtn";
-			this->errorTestBtn->Size = System::Drawing::Size(278, 22);
+			this->errorTestBtn->Size = System::Drawing::Size(324, 24);
 			this->errorTestBtn->TabIndex = 36;
-			this->errorTestBtn->Text = L"Протестировать программу на наличие ошибок";
+			this->errorTestBtn->Text = L"Протестировать программы на наличие ошибок";
 			this->errorTestBtn->UseVisualStyleBackColor = false;
 			// 
 			// groupBox4
 			// 
-			this->groupBox4->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->groupBox4->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->groupBox4->Controls->Add(this->outputLabel);
 			this->groupBox4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->groupBox4->Location = System::Drawing::Point(303, 51);
+			this->groupBox4->Location = System::Drawing::Point(354, 55);
+			this->groupBox4->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(74, 146);
+			this->groupBox4->Padding = System::Windows::Forms::Padding(4, 3, 4, 3);
+			this->groupBox4->Size = System::Drawing::Size(86, 157);
 			this->groupBox4->TabIndex = 35;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Вывод";
@@ -346,19 +384,22 @@ namespace UniLab1 {
 			// outputLabel
 			// 
 			this->outputLabel->AutoSize = true;
-			this->outputLabel->Location = System::Drawing::Point(6, 16);
+			this->outputLabel->Location = System::Drawing::Point(7, 17);
+			this->outputLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->outputLabel->Name = L"outputLabel";
-			this->outputLabel->Size = System::Drawing::Size(0, 13);
+			this->outputLabel->Size = System::Drawing::Size(0, 14);
 			this->outputLabel->TabIndex = 0;
 			// 
 			// groupBox3
 			// 
-			this->groupBox3->BackColor = System::Drawing::SystemColors::InactiveBorder;
+			this->groupBox3->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->groupBox3->Controls->Add(this->inputLabel);
 			this->groupBox3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->groupBox3->Location = System::Drawing::Point(223, 51);
+			this->groupBox3->Location = System::Drawing::Point(260, 55);
+			this->groupBox3->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(74, 146);
+			this->groupBox3->Padding = System::Windows::Forms::Padding(4, 3, 4, 3);
+			this->groupBox3->Size = System::Drawing::Size(86, 157);
 			this->groupBox3->TabIndex = 34;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Ввод";
@@ -366,9 +407,10 @@ namespace UniLab1 {
 			// inputLabel
 			// 
 			this->inputLabel->AutoSize = true;
-			this->inputLabel->Location = System::Drawing::Point(6, 16);
+			this->inputLabel->Location = System::Drawing::Point(7, 17);
+			this->inputLabel->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->inputLabel->Name = L"inputLabel";
-			this->inputLabel->Size = System::Drawing::Size(0, 13);
+			this->inputLabel->Size = System::Drawing::Size(0, 14);
 			this->inputLabel->TabIndex = 0;
 			// 
 			// infoBtn2
@@ -377,9 +419,10 @@ namespace UniLab1 {
 			this->infoBtn2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->infoBtn2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->infoBtn2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->infoBtn2->Location = System::Drawing::Point(331, 214);
+			this->infoBtn2->Location = System::Drawing::Point(386, 230);
+			this->infoBtn2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->infoBtn2->Name = L"infoBtn2";
-			this->infoBtn2->Size = System::Drawing::Size(85, 22);
+			this->infoBtn2->Size = System::Drawing::Size(99, 24);
 			this->infoBtn2->TabIndex = 18;
 			this->infoBtn2->Text = L"Информация";
 			this->infoBtn2->UseVisualStyleBackColor = false;
@@ -390,9 +433,10 @@ namespace UniLab1 {
 			this->inputBtn->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->inputBtn->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->inputBtn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->inputBtn->Location = System::Drawing::Point(119, 77);
+			this->inputBtn->Location = System::Drawing::Point(139, 83);
+			this->inputBtn->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->inputBtn->Name = L"inputBtn";
-			this->inputBtn->Size = System::Drawing::Size(87, 31);
+			this->inputBtn->Size = System::Drawing::Size(102, 33);
 			this->inputBtn->TabIndex = 30;
 			this->inputBtn->Text = L"Ввести";
 			this->inputBtn->UseVisualStyleBackColor = false;
@@ -403,9 +447,10 @@ namespace UniLab1 {
 			this->startBtn2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->startBtn2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->startBtn2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->startBtn2->Location = System::Drawing::Point(19, 114);
+			this->startBtn2->Location = System::Drawing::Point(22, 123);
+			this->startBtn2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->startBtn2->Name = L"startBtn2";
-			this->startBtn2->Size = System::Drawing::Size(187, 83);
+			this->startBtn2->Size = System::Drawing::Size(218, 89);
 			this->startBtn2->TabIndex = 28;
 			this->startBtn2->Text = L"Запуск";
 			this->startBtn2->UseVisualStyleBackColor = false;
@@ -416,9 +461,10 @@ namespace UniLab1 {
 			this->resetBtn2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->resetBtn2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->resetBtn2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->resetBtn2->Location = System::Drawing::Point(19, 77);
+			this->resetBtn2->Location = System::Drawing::Point(22, 83);
+			this->resetBtn2->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->resetBtn2->Name = L"resetBtn2";
-			this->resetBtn2->Size = System::Drawing::Size(94, 31);
+			this->resetBtn2->Size = System::Drawing::Size(110, 33);
 			this->resetBtn2->TabIndex = 27;
 			this->resetBtn2->Text = L"Очистить поля";
 			this->resetBtn2->UseVisualStyleBackColor = false;
@@ -429,32 +475,27 @@ namespace UniLab1 {
 			this->progLabel2->AutoSize = true;
 			this->progLabel2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->progLabel2->ForeColor = System::Drawing::Color::DimGray;
-			this->progLabel2->Location = System::Drawing::Point(15, 16);
+			this->progLabel2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->progLabel2->Location = System::Drawing::Point(18, 17);
+			this->progLabel2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->progLabel2->Name = L"progLabel2";
 			this->progLabel2->Size = System::Drawing::Size(155, 18);
 			this->progLabel2->TabIndex = 20;
 			this->progLabel2->Text = L"Вторая программа";
 			// 
-			// fieldLabel2
-			// 
-			this->fieldLabel2->AutoSize = true;
-			this->fieldLabel2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->fieldLabel2->Location = System::Drawing::Point(16, 54);
-			this->fieldLabel2->Name = L"fieldLabel2";
-			this->fieldLabel2->Size = System::Drawing::Size(69, 13);
-			this->fieldLabel2->TabIndex = 37;
-			this->fieldLabel2->Text = L"Поле ввода:";
-			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(7, 14);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::InactiveBorder;
-			this->ClientSize = System::Drawing::Size(448, 477);
+			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->ClientSize = System::Drawing::Size(523, 514);
 			this->Controls->Add(this->progBox2);
 			this->Controls->Add(this->progBox1);
+			this->Font = (gcnew System::Drawing::Font(L"Lucida Fax", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
 			this->MaximizeBox = false;
 			this->Name = L"MainForm";
 			this->RightToLeft = System::Windows::Forms::RightToLeft::No;
