@@ -1,5 +1,11 @@
 ﻿#pragma once
 
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <msclr/marshal_cppstd.h> 
+
 namespace UniLab1 {
 
 	using namespace System;
@@ -9,6 +15,7 @@ namespace UniLab1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::Collections::Generic;
+	using namespace std;
 
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
@@ -29,7 +36,7 @@ namespace UniLab1 {
 	private: unsigned short int n;
 	private: unsigned int count = 0;
 	private: bool choiceСheck;
-	
+
 	private: System::Windows::Forms::Label^ fieldLabel1;
 	private: System::Windows::Forms::Label^ radioLabel;
 	private: System::Windows::Forms::Label^ progLabel1;
@@ -353,7 +360,7 @@ namespace UniLab1 {
 			this->groupBox4->Size = System::Drawing::Size(75, 146);
 			this->groupBox4->TabIndex = 35;
 			this->groupBox4->TabStop = false;
-			this->groupBox4->Text = L"Вывод";
+			this->groupBox4->Text = L"Кол-во 1";
 			// 
 			// outputLabel
 			// 
@@ -362,6 +369,7 @@ namespace UniLab1 {
 			this->outputLabel->Name = L"outputLabel";
 			this->outputLabel->Size = System::Drawing::Size(0, 13);
 			this->outputLabel->TabIndex = 0;
+			this->outputLabel->Text = L"outputLabel";
 			// 
 			// groupBox3
 			// 
@@ -373,7 +381,7 @@ namespace UniLab1 {
 			this->groupBox3->Size = System::Drawing::Size(75, 146);
 			this->groupBox3->TabIndex = 34;
 			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"Ввод";
+			this->groupBox3->Text = L"Массив";
 			// 
 			// inputLabel
 			// 
@@ -480,9 +488,9 @@ namespace UniLab1 {
 
 #pragma endregion
 
-		//ФУНКЦИИ
+		// -- [ Функции ] --
 
-		//	Рекурсивная функция для первой формулы
+		// Рекурсивная функция для первой формулы
 		int recursion1(unsigned int n) {
 			++count;
 
@@ -497,7 +505,7 @@ namespace UniLab1 {
 			return 0;
 		}
 
-		//	Рекурсивная функция для второй формулы
+		// Рекурсивная функция для второй формулы
 		int recursion2(unsigned int n) {
 			++count;
 
@@ -514,29 +522,36 @@ namespace UniLab1 {
 			return 0;
 		}
 
-		//	Рекурсивная функция для вывода нечётных элементов массива
-		array<String^>^ recursion3(array<String^>^ strings, int index, List<String^>^ tempList) {
-			if (index >= strings->Length) {
-				return tempList->ToArray();
+
+		int unitsCounter(const std::string& input) {
+			int unitCnt = 0;
+			const int max = 9;
+			std::vector<int> numbers;
+
+			// Используем stringstream для разделения строки на числа
+			std::stringstream ss(input);
+			std::string line;
+			while (std::getline(ss, line)) {
+				if (!line.empty()) {
+					int number = std::stoi(line);
+					numbers.push_back(number);
+				}
 			}
 
-			int number = Convert::ToInt32(strings[index]);
-			if (number % 2 != 0) {
-				tempList->Add(strings[index]);
+			for (size_t i = 0; i < numbers.size() && i < max; i++) {
+				if (numbers[i] == 1) {
+					unitCnt++;
+				}
+
+				if (i > 0 && numbers[i] == 0 && numbers[i - 1] == 0) {
+					break;
+				}
 			}
 
-			return recursion3(strings, index + 1, tempList);
+			return unitCnt;
 		}
 
-		//	Функция подготовки массива для вывода 
-		array<String^>^ ConvertToIntegerArray(array<String^>^ strings) {
-			List<String^>^ tempList = gcnew List<String^>();
-			return recursion3(strings, 0, tempList);
-		}
-
-
-
-		//	ПРОВЕРКИ ИЗМЕНЕНИЙ
+		//	-- [ Функции проверки изменения полей ] --
 
 		//	Проверка для первой функции
 		int validityCheckFor1() {
@@ -613,7 +628,7 @@ namespace UniLab1 {
 		};
 
 
-		//	КНОПКИ
+		// -- [ Кнопки ] --
 
 		//	Кнопка выбора первой рекурсивной формулы
 		private: System::Void radioBtn1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -692,7 +707,7 @@ namespace UniLab1 {
 		
 		//	Кнопка ввода элемента массива во второй программе
 		private:System::Void inputBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (this->textField1->Text == " ") {
+			if (this->textField2->Text == "") {
 				MessageBox::Show("Введите значение элемента массива в \"Поле ввода\" прежде чем нажать на кнопку \"Ввести\" .", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 				return;
 			}
@@ -703,18 +718,8 @@ namespace UniLab1 {
 			}
 
 			if (!textField2->Text->Equals("")) {
-				int num = System::Convert::ToInt32(textField2->Text);
+				int num = Convert::ToInt32(textField2->Text);
 				this->textField2->Text = "";
-
-				if (inputLabel->Text->Split('\n')->Length - 1 == 8 && num != 0) {
-					MessageBox::Show("Девятый введенный элемент должен быть нулем.", "Предупреждение", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-					return;
-				}
-
-
-				if (inputLabel->Text->Split('\n')->Length - 1 == 8 && num != 0) {
-					inputLabel->Text = inputLabel->Text->Substring(0, inputLabel->Text->LastIndexOf('\n'));
-				}
 
 				inputLabel->Text += num + "\r\n";
 			}
@@ -722,23 +727,8 @@ namespace UniLab1 {
 
 		//	Кнопка запуска второй программы
 		private: System::Void startBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
-			array<String^>^ numbers = inputLabel->Text->Split(gcnew array<wchar_t> {'\n', '\r'}, StringSplitOptions::RemoveEmptyEntries);
-
-			if (numbers->Length == 0) {
-				MessageBox::Show("Введите хотя бы один элемент для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-
-			if (numbers[numbers->Length - 1] != "0") {
-				MessageBox::Show("Для начала подсчета нечетных элементов введите ноль в качестве последнего элемента массива.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
-
-			Array::Resize(numbers, numbers->Length - 1);
-
-			array<String^>^ oddElements = ConvertToIntegerArray(numbers);
-
-			outputLabel->Text = String::Join("\r\n", oddElements);
+			std::string output = msclr::interop::marshal_as<std::string>(outputLabel->Text);
+			int count = unitsCounter(output);
 		}
 
 
@@ -770,7 +760,7 @@ namespace UniLab1 {
 			}
 		}
 
-		//	ТЕСТЫ
+		//	-- [ ТЕСТЫ ] --
 
 		//	Тест работы первой рекурсивной функции
 		int testRecursion1() {
