@@ -33,9 +33,9 @@ namespace UniLab1 {
 		}
 	}
 
-	private: unsigned short int n;
-	private: unsigned int count = 0;
-	private: bool choiceСheck;
+	private: unsigned short int n;	// Переменная для подстановки в рекурсивную функцию
+	private: unsigned int count = 0;	// Переменная для подсчёта вывова рекрсивной функции
+	private: bool choiceСheck;	// Переменная проверки выбора
 
 	private: System::Windows::Forms::Label^ fieldLabel1;
 	private: System::Windows::Forms::Label^ radioLabel;
@@ -551,9 +551,9 @@ namespace UniLab1 {
 			return unitCnt;
 		}
 
-		//	-- [ Функции проверки изменения полей ] --
+		// -- [ Функции проверки изменения полей ] --
 
-		//	Проверка для первой функции
+		// Проверка для первой функции
 		int validityCheckFor1() {
 			String^ errorOverFlow1 = "В целях безопасноси для рекурсии первого вида программа не принимает значения выше 30.";
 			String^ errorOverFlow2 = "При выборе первого варианта рекурсивной функции вводимое значение, которое больше единицы, должно быть нечётным.";
@@ -585,7 +585,7 @@ namespace UniLab1 {
 			return 0;
 		}
 
-		//	Проверка для второй функции
+		// Проверка для второй функции
 		int validityCheckFor2() {
 			String^ errorOverFlow1 = "В целях безопасноси для рекурсии второго вида программа не принимает значения выше 80.";
 			String^ errorOverFlow2 = "При выборе второй рекурсивной функции вводимое значение должно быть не меньше единицы.";
@@ -616,7 +616,7 @@ namespace UniLab1 {
 			return 0;
 		}
 
-		//	Проверка изменеия текста в поле ввода первой программы
+		// Проверка изменеия текста в поле ввода первой программы
 		System::Void textField1TextChanged(System::Object^ sender, System::EventArgs^ e) {
 			this->radioBtn1->Checked = false;
 			this->radioBtn2->Checked = false;
@@ -630,7 +630,7 @@ namespace UniLab1 {
 
 		// -- [ Кнопки ] --
 
-		//	Кнопка выбора первой рекурсивной формулы
+		// Кнопка выбора первой рекурсивной формулы
 		private: System::Void radioBtn1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 			validityCheckFor1();
 			if (validityCheckFor1() == true) {
@@ -646,7 +646,7 @@ namespace UniLab1 {
 			}
 		}
 
-		//	Кнопка выбора второй рекурсивной функции
+		// Кнопка выбора второй рекурсивной функции
 		private: System::Void radioBtn2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 			validityCheckFor2();
 			if (validityCheckFor2() == true) {
@@ -662,7 +662,7 @@ namespace UniLab1 {
 			}
 		}
 
-		//	Кнопка запуска первой программы
+		// Кнопка запуска первой программы
 		private: System::Void startBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
 			count = 0;
 
@@ -690,7 +690,7 @@ namespace UniLab1 {
 			}
 		}
 		
-		//	Кнопка очистки полей первой программы
+		// Кнопка очистки полей первой программы
 		private: System::Void resetBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
 			this->textField1->Text = "";
 			this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
@@ -700,12 +700,12 @@ namespace UniLab1 {
 			this->radioBtn2->Checked = false;
 		}
 		
-		//	Кнопка информации о первой программе
+		// Кнопка информации о первой программе
 		private: System::Void infoBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
 			MessageBox::Show("Работа с первой программой\n\nДля работы с рекурсивными функциями:\r\n\r\n1) Введите данные.\n    Для ввода значений введите данные в поле ввода.\n    Максимальное значение для первой рекурсии - 30.\n    Максимальное значение для второй рекурсии - 80.\r\n\r\n2) Выберите вариант рекурсивной функции.\n    После выбора рекурсии ниже будет выведена\n    формула выбранной Вами рекурсивной функции.\r\n\r\n3) Запустите программу.\n    Нажмине кнопку \"Запуск\" для запуска рекурсии.\r\n\r\nПосле запуска рекурсии будет выведен результат рекурсивных вычислений и количество вызовов рекурсивной функции.\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторите вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
 		
-		//	Кнопка ввода элемента массива во второй программе
+		// Кнопка ввода элемента массива во второй программе
 		private:System::Void inputBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 			if (this->textField2->Text == "") {
 				MessageBox::Show("Введите значение элемента массива в \"Поле ввода\" прежде чем нажать на кнопку \"Ввести\" .", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -725,26 +725,26 @@ namespace UniLab1 {
 			}
 		}
 
-		//	Кнопка запуска второй программы
+		// Кнопка запуска второй программы
 		private: System::Void startBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
 			std::string output = msclr::interop::marshal_as<std::string>(outputLabel->Text);
 			int count = unitsCounter(output);
 		}
 
 
-		//	Кнопка очистки полей второй программы
+		// Кнопка очистки полей второй программы
 		private: System::Void resetBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
 			this->inputLabel->Text = "";
 			this->outputLabel->Text = "";
 			this->textField2->Text = "";
 		}
 
-		//	Кнопка информации о второй программе
+		// Кнопка информации о второй программе
 		private: System::Void infoBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
 			MessageBox::Show("Работа со второй программой\r\n\r\nДля работы с программой:\r\n\r\n1) Введите последовательность в поле ввода по одному\n    элементу.\r\n\r\n2) Чтобы добавить элемент в программу нажмите\n    кнопку \"Ввести\", после чего элемент будет добавлен\n    в поле\"Ввод\".\r\n\r\n3) Для запуска программы нажмите кнопку \"Запуск\".\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторие вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
 
-		//	Кнопка тестирования программы
+		// Кнопка тестирования программы
 		private: System::Void errorTestBtn_Click(System::Object^ sender, System::EventArgs^ e) {
 			int allTests = testRecursion1() + testRecursion2() + testOverflow1() + testOverflow2();
 
@@ -760,9 +760,9 @@ namespace UniLab1 {
 			}
 		}
 
-		//	-- [ ТЕСТЫ ] --
+		// -- [ ТЕСТЫ ] --
 
-		//	Тест работы первой рекурсивной функции
+		// Тест работы первой рекурсивной функции
 		int testRecursion1() {
 			
 			if (recursion1(5) == 10) {
@@ -772,7 +772,7 @@ namespace UniLab1 {
 			}
 		}
 
-		//	Тест работы второй рекурсивной функции
+		// Тест работы второй рекурсивной функции
 		int testRecursion2() {
 			if (recursion2(5) == 4) {
 				return 0;
@@ -781,7 +781,7 @@ namespace UniLab1 {
 			}
 		}
 
-		//	Тест перегрузки первой функции
+		// Тест перегрузки первой функции
 		int testOverflow1() {
 			recursion1(31);
 			if (validityCheckFor1() == 0) {
@@ -791,7 +791,7 @@ namespace UniLab1 {
 			}
 		}
 
-		//	Тест перегрузки второй функции
+		// Тест перегрузки второй функции
 		int testOverflow2() {
 			recursion2(81);
 			if (validityCheckFor2() == 0) {
