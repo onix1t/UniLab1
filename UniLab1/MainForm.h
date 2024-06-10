@@ -520,7 +520,8 @@ namespace UniLab1 {
 
 			return 0;
 		}
-		
+
+		// Функция для второй программы - счётчик единиц
 		int unitsCounter(const std::string& input) {
 			int unitCnt = 0;
 			int prevNumber = -1;
@@ -776,6 +777,7 @@ namespace UniLab1 {
 			}
 		}
 
+		// Тест для второй программы
 		int testUnitsCounter()
 		{
 			string input1 = "1 1 0 0 1 1";
