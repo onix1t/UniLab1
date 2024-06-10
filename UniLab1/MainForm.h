@@ -369,7 +369,6 @@ namespace UniLab1 {
 			this->outputLabel->Name = L"outputLabel";
 			this->outputLabel->Size = System::Drawing::Size(0, 13);
 			this->outputLabel->TabIndex = 0;
-			this->outputLabel->Text = L"outputLabel";
 			// 
 			// groupBox3
 			// 
@@ -521,31 +520,26 @@ namespace UniLab1 {
 
 			return 0;
 		}
-
-
+		
 		int unitsCounter(const std::string& input) {
 			int unitCnt = 0;
-			const int max = 9;
-			std::vector<int> numbers;
+			int prevNumber = -1;
 
-			// Используем stringstream для разделения строки на числа
 			std::stringstream ss(input);
-			std::string line;
-			while (std::getline(ss, line)) {
-				if (!line.empty()) {
-					int number = std::stoi(line);
-					numbers.push_back(number);
-				}
-			}
+			std::string token;
 
-			for (size_t i = 0; i < numbers.size() && i < max; i++) {
-				if (numbers[i] == 1) {
+			while (ss >> token) {
+				int number = std::stoi(token);
+
+				if (number == 1) {
 					unitCnt++;
 				}
 
-				if (i > 0 && numbers[i] == 0 && numbers[i - 1] == 0) {
+				if (number == 0 && prevNumber == 0) {
 					break;
 				}
+
+				prevNumber = number;
 			}
 
 			return unitCnt;
@@ -555,198 +549,176 @@ namespace UniLab1 {
 
 		// Проверка для первой функции
 		int validityCheckFor1() {
-			String^ errorOverFlow1 = "В целях безопасноси для рекурсии первого вида программа не принимает значения выше 30.";
-			String^ errorOverFlow2 = "При выборе первого варианта рекурсивной функции вводимое значение, которое больше единицы, должно быть нечётным.";
+		    String^ errorOverFlow1 = "В целях безопасности для рекурсии первого вида программа не принимает значения выше 30.";
+		    String^ errorOverFlow2 = "При выборе первого варианта рекурсивной функции вводимое значение, которое больше единицы, должно быть нечётным.";
 
-			try {
-				if (this->radioBtn1->Checked == true && this->textField1->Text != "") {
-					int dataN = System::Convert::ToInt32(this->textField1->Text);
+		    try {
+		        if (this->radioBtn1->Checked == true && this->textField1->Text != "") {
+		            int dataN = System::Convert::ToInt32(this->textField1->Text);
 
-					if (dataN > 30) {
-						throw errorOverFlow1;
-					}
+		            if (dataN > 30) {
+		                throw errorOverFlow1;
+		            } else if (dataN < 1 || dataN % 2 == 0) {
+		                throw errorOverFlow2;
+		            }
+		        }
+		    } catch (String^ errorOverFlow) {
+		        this->textField1->ForeColor = Color::Red;
+		        System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
-					else if (dataN < 1 || dataN % 2 == 0) {
-						throw errorOverFlow2;
-					}
-				}
-			}
-			catch (String^ errorOverFlow) {
-				this->textField1->ForeColor = Color::Red;
-				System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-
-				if (result == System::Windows::Forms::DialogResult::OK) {
-					this->textField1->Text = "";
-					this->textField1->ForeColor = Color::Black;
-					this->radioBtn1->Checked = false;
-					this->radioBtn2->Checked = false;
-				}
-			}
-			return 0;
+		        if (result == System::Windows::Forms::DialogResult::OK) {
+		            this->textField1->Text = "";
+		            this->textField1->ForeColor = Color::Black;
+		            this->radioBtn1->Checked = false;
+		            this->radioBtn2->Checked = false;
+		        }
+		    }
+		    return 0;
 		}
 
 		// Проверка для второй функции
 		int validityCheckFor2() {
-			String^ errorOverFlow1 = "В целях безопасноси для рекурсии второго вида программа не принимает значения выше 80.";
-			String^ errorOverFlow2 = "При выборе второй рекурсивной функции вводимое значение должно быть не меньше единицы.";
+		    String^ errorOverFlow1 = "В целях безопасности для рекурсии второго вида программа не принимает значения выше 80.";
+		    String^ errorOverFlow2 = "При выборе второй рекурсивной функции вводимое значение должно быть не меньше единицы.";
 
-			try {
-				if (this->radioBtn2->Checked == true && this->textField1->Text != "") {
-					int dataN = System::Convert::ToInt32(this->textField1->Text);
+		    try {
+		        if (this->radioBtn2->Checked == true && this->textField1->Text != "") {
+		            int dataN = System::Convert::ToInt32(this->textField1->Text);
 
-					if (dataN > 80) {
-						throw errorOverFlow1;
-					} else if (dataN < 1) {
-						throw errorOverFlow2;
-					}
+		            if (dataN > 80) {
+		                throw errorOverFlow1;
+		            } else if (dataN < 1) {
+		                throw errorOverFlow2;
+		            }
+		        }
+		    } catch (String^ errorOverFlow) {
+		        this->textField1->ForeColor = Color::Red;
+		        System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 
-				}
-			}
-			catch (String^ errorOverFlow) {
-				this->textField1->ForeColor = Color::Red;
-				System::Windows::Forms::DialogResult result = MessageBox::Show(errorOverFlow, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-
-				if (result == System::Windows::Forms::DialogResult::OK) {
-					this->textField1->Text = "";
-					this->textField1->ForeColor = Color::Black;
-					this->radioBtn1->Checked = false;
-					this->radioBtn2->Checked = false;
-				}
-			}
-			return 0;
+		        if (result == System::Windows::Forms::DialogResult::OK) {
+		            this->textField1->Text = "";
+		            this->textField1->ForeColor = Color::Black;
+		            this->radioBtn1->Checked = false;
+		            this->radioBtn2->Checked = false;
+		        }
+		    }
+		    return 0;
 		}
 
-		// Проверка изменеия текста в поле ввода первой программы
+		// Проверка изменения текста в поле ввода первой программы
 		System::Void textField1TextChanged(System::Object^ sender, System::EventArgs^ e) {
-			this->radioBtn1->Checked = false;
-			this->radioBtn2->Checked = false;
-			this->resultNum->Text = "";
-			this->countNum->Text = "";
-			validityCheckFor1();
-			validityCheckFor2();
-
+		    this->radioBtn1->Checked = false;
+		    this->radioBtn2->Checked = false;
+		    this->resultNum->Text = "";
+		    this->countNum->Text = "";
+		    validityCheckFor1();
+		    validityCheckFor2();
 		};
-
 
 		// -- [ Кнопки ] --
 
 		// Кнопка выбора первой рекурсивной формулы
 		private: System::Void radioBtn1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-			validityCheckFor1();
-			if (validityCheckFor1() == true) {
-				this->radioBtn1->Checked = false;
-				this->radioBtn2->Checked = false;
-			}
+		    validityCheckFor1();
 
-			if (this->radioBtn1->Checked == true) {
-				this->formulaLabel->Text = "F(n) = 2, при n <=1;\r\nF(n) = 1 + F(n - 1) * F(n - 2) - F(n - 1) - F(n - 2), если n > 1 и при этом n нечётно;\r\nF(n) = 2 * F(n - 1), если n > 1 и при этом n чётно";
-				choiceСheck = true;
-			} else {
-				this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
-			}
+		    if (this->radioBtn1->Checked == true) {
+		        this->formulaLabel->Text = "F(n) = 2, при n <= 1;\r\nF(n) = 1 + F(n - 1) * F(n - 2) - F(n - 1) - F(n - 2), если n > 1 и при этом n нечётно;\r\nF(n) = 2 * F(n - 1), если n > 1 и при этом n чётно";
+		        choiceСheck = true;
+		    } else {
+		        this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
+		    }
 		}
 
 		// Кнопка выбора второй рекурсивной функции
 		private: System::Void radioBtn2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-			validityCheckFor2();
-			if (validityCheckFor2() == true) {
-				this->radioBtn1->Checked = false;
-				this->radioBtn2->Checked = false;
-			}
+		    validityCheckFor2();
 
-			if (this->radioBtn2->Checked == true) {
-				this->formulaLabel->Text = "F(n) = 1, при n = 1;\r\nF(n) = 2, при n = 2;\r\nF(n) = [(7 * n + F(n - 3)) / 9], если n > 2 и при этом n четно\r\nF(n) = [(5 * n + F(n - 1) + F(n - 2)) / 7], если n > 2 и при этом n";
-				choiceСheck = false;
-			} else {
-				this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
-			}
+		    if (this->radioBtn2->Checked == true) {
+		        this->formulaLabel->Text = "F(n) = 1, при n = 1;\r\nF(n) = 2, при n = 2;\r\nF(n) = [(7 * n + F(n - 3)) / 9], если n > 2 и при этом n чётно;\r\nF(n) = [(5 * n + F(n - 1) + F(n - 2)) / 7], если n > 2 и при этом n нечётно";
+		        choiceСheck = false;
+		    } else {
+		        this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
+		    }
 		}
 
 		// Кнопка запуска первой программы
 		private: System::Void startBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
-			count = 0;
+		    static int count = 0; // Определим переменную count как static внутри функции
+		    count = 0;
 
-			if (this->textField1->Text == "") {
-				MessageBox::Show("Введите значение в \"Поле ввода\" для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
+		    if (this->textField1->Text == "") {
+		        MessageBox::Show("Введите значение в \"Поле ввода\" для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		        return;
+		    }
 
-			if (this->radioBtn1->Checked == false && this->radioBtn2->Checked == false) {
-				MessageBox::Show("Выберите один из двух вариантов рекурсии для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
+		    if (this->radioBtn1->Checked == false && this->radioBtn2->Checked == false) {
+		        MessageBox::Show("Выберите один из двух вариантов рекурсии для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		        return;
+		    }
 
-			if (this->textField1->Text != "") {
-				this-> n = System::Convert::ToInt32(this->textField1->Text);
-				if (this->radioBtn1->Checked || this->radioBtn2->Checked){
-					if (choiceСheck == true) {
-						this->resultNum->Text = System::Convert::ToString(recursion1(n));
-						this->countNum->Text = System::Convert::ToString(count);
-					} else {
-						this->resultNum->Text = System::Convert::ToString(recursion2(n));
-						this->countNum->Text = System::Convert::ToString(count);
-					}
-				}
-			}
+		    int n = System::Convert::ToInt32(this->textField1->Text);
+		    if (this->radioBtn1->Checked) {
+		        this->resultNum->Text = System::Convert::ToString(recursion1(n));
+		    } else if (this->radioBtn2->Checked) {
+		        this->resultNum->Text = System::Convert::ToString(recursion2(n));
+		    }
+		    this->countNum->Text = System::Convert::ToString(count);
 		}
-		
+
 		// Кнопка очистки полей первой программы
 		private: System::Void resetBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
-			this->textField1->Text = "";
-			this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
-			this->resultNum->Text = "";
-			this->countNum->Text = "";
-			this->radioBtn1->Checked = false;
-			this->radioBtn2->Checked = false;
+		    this->textField1->Text = "";
+		    this->formulaLabel->Text = "Здесь будет отображаться выбранный Вами вариант рекурсии";
+		    this->resultNum->Text = "";
+		    this->countNum->Text = "";
+		    this->radioBtn1->Checked = false;
+		    this->radioBtn2->Checked = false;
 		}
-		
+
 		// Кнопка информации о первой программе
 		private: System::Void infoBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
-			MessageBox::Show("Работа с первой программой\n\nДля работы с рекурсивными функциями:\r\n\r\n1) Введите данные.\n    Для ввода значений введите данные в поле ввода.\n    Максимальное значение для первой рекурсии - 30.\n    Максимальное значение для второй рекурсии - 80.\r\n\r\n2) Выберите вариант рекурсивной функции.\n    После выбора рекурсии ниже будет выведена\n    формула выбранной Вами рекурсивной функции.\r\n\r\n3) Запустите программу.\n    Нажмине кнопку \"Запуск\" для запуска рекурсии.\r\n\r\nПосле запуска рекурсии будет выведен результат рекурсивных вычислений и количество вызовов рекурсивной функции.\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторите вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		    MessageBox::Show("Работа с первой программой\n\nДля работы с рекурсивными функциями:\r\n\r\n1) Введите данные.\n    Для ввода значений введите данные в поле ввода.\n    Максимальное значение для первой рекурсии - 30.\n    Максимальное значение для второй рекурсии - 80.\r\n\r\n2) Выберите вариант рекурсивной функции.\n    После выбора рекурсии ниже будет выведена\n    формула выбранной Вами рекурсивной функции.\r\n\r\n3) Запустите программу.\n    Нажмите кнопку \"Запуск\" для запуска рекурсии.\r\n\r\nПосле запуска рекурсии будет выведен результат рекурсивных вычислений и количество вызовов рекурсивной функции.\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторите вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
-		
+
 		// Кнопка ввода элемента массива во второй программе
-		private:System::Void inputBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-			if (this->textField2->Text == "") {
-				MessageBox::Show("Введите значение элемента массива в \"Поле ввода\" прежде чем нажать на кнопку \"Ввести\" .", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
-				return;
-			}
+		private: System::Void inputBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		    if (this->textField2->Text == "") {
+		        MessageBox::Show("Введите значение элемента массива в \"Поле ввода\" прежде чем нажать на кнопку \"Ввести\".", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		        return;
+		    }
 
-			if (inputLabel->Text->Split('\n')->Length - 1 >= 9) {
-				MessageBox::Show("Максимальное количество элементов в массиве достигнуто.", "Предупреждение", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				return;
-			}
+		    if (inputLabel->Text->Split('\n')->Length - 1 >= 9) {
+		        MessageBox::Show("Максимальное количество элементов в массиве достигнуто.", "Предупреждение", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		        return;
+		    }
 
-			if (!textField2->Text->Equals("")) {
-				int num = Convert::ToInt32(textField2->Text);
-				this->textField2->Text = "";
-
-				inputLabel->Text += num + "\r\n";
-			}
+		    int num = Convert::ToInt32(this->textField2->Text);
+		    this->textField2->Text = "";
+		    inputLabel->Text += num + "\r\n";
 		}
 
 		// Кнопка запуска второй программы
 		private: System::Void startBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
-			std::string output = msclr::interop::marshal_as<std::string>(outputLabel->Text);
-			int count = unitsCounter(output);
+		    std::string output = msclr::interop::marshal_as<std::string>(inputLabel->Text);
+		    int count = unitsCounter(output);
+		    this->outputLabel->Text = System::Convert::ToString(count);
 		}
-
 
 		// Кнопка очистки полей второй программы
 		private: System::Void resetBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
-			this->inputLabel->Text = "";
-			this->outputLabel->Text = "";
-			this->textField2->Text = "";
+		    this->inputLabel->Text = "";
+		    this->outputLabel->Text = "";
+		    this->textField2->Text = "";
 		}
 
 		// Кнопка информации о второй программе
 		private: System::Void infoBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
-			MessageBox::Show("Работа со второй программой\r\n\r\nДля работы с программой:\r\n\r\n1) Введите последовательность в поле ввода по одному\n    элементу.\r\n\r\n2) Чтобы добавить элемент в программу нажмите\n    кнопку \"Ввести\", после чего элемент будет добавлен\n    в поле\"Ввод\".\r\n\r\n3) Для запуска программы нажмите кнопку \"Запуск\".\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторие вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
+		    MessageBox::Show("Работа со второй программой\r\n\r\nДля работы с программой:\r\n\r\n1) Введите последовательность в поле ввода по одному\n    элементу.\r\n\r\n2) Чтобы добавить элемент в программу нажмите\n    кнопку \"Ввести\", после чего элемент будет добавлен\n    в поле \"Ввод\".\r\n\r\n3) Для запуска программы нажмите кнопку \"Запуск\".\r\n\r\nДля повторного использования программы нажмите кнопку \"Очистить поля\" и повторите вышеперечисленные действия.", "Информация о работе программы", MessageBoxButtons::OK, MessageBoxIcon::Information);
 		}
 
 		// Кнопка тестирования программы
 		private: System::Void errorTestBtn_Click(System::Object^ sender, System::EventArgs^ e) {
-			int allTests = testRecursion1() + testRecursion2() + testOverflow1() + testOverflow2();
+			int allTests = testRecursion1() + testRecursion2() + testOverflow1() + testOverflow2() + testUnitsCounter();
 
 			if (allTests == 0) {
 				MessageBox::Show("Все тесты пройдены. Программа работает корректно.", "Пройдено", MessageBoxButtons::OK, MessageBoxIcon::Information);
@@ -763,8 +735,8 @@ namespace UniLab1 {
 		// -- [ ТЕСТЫ ] --
 
 		// Тест работы первой рекурсивной функции
-		int testRecursion1() {
-			
+		int testRecursion1()
+		{
 			if (recursion1(5) == 10) {
 				return 0;
 			} else {
@@ -773,7 +745,8 @@ namespace UniLab1 {
 		}
 
 		// Тест работы второй рекурсивной функции
-		int testRecursion2() {
+		int testRecursion2()
+		{
 			if (recursion2(5) == 4) {
 				return 0;
 			} else {
@@ -782,7 +755,8 @@ namespace UniLab1 {
 		}
 
 		// Тест перегрузки первой функции
-		int testOverflow1() {
+		int testOverflow1()
+		{
 			recursion1(31);
 			if (validityCheckFor1() == 0) {
 				return 0;
@@ -792,9 +766,26 @@ namespace UniLab1 {
 		}
 
 		// Тест перегрузки второй функции
-		int testOverflow2() {
+		int testOverflow2()
+		{
 			recursion2(81);
 			if (validityCheckFor2() == 0) {
+				return 0;
+			} else {
+				return 1;
+			}
+		}
+
+		int testUnitsCounter()
+		{
+			string input1 = "1 1 0 0 1 1";
+			string input2 = "1 0 1 0 0 1";
+			string input3 = "1 1 1 0 1 1";
+			string input4 = "0 0 1 1 1 1";
+			string input5 = "1 1 1 1 1 1 1 1 1";
+
+			if (unitsCounter(input1) == 2 && unitsCounter(input2) == 2 && unitsCounter(input3) == 5 && unitsCounter(input4) == 0 && unitsCounter(input5) == 9)
+			{
 				return 0;
 			} else {
 				return 1;
