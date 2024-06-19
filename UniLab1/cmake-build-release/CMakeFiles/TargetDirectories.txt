@@ -1,3 +1,0 @@
-G:/Projects/University/C++/Lab/Programs/Solutions/UniLab1/UniLab1/cmake-build-release/CMakeFiles/UniLab1.dir
-G:/Projects/University/C++/Lab/Programs/Solutions/UniLab1/UniLab1/cmake-build-release/CMakeFiles/edit_cache.dir
-G:/Projects/University/C++/Lab/Programs/Solutions/UniLab1/UniLab1/cmake-build-release/CMakeFiles/rebuild_cache.dir
