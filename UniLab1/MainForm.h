@@ -522,15 +522,15 @@ namespace UniLab1 {
 		}
 
 		// Функция для второй программы - счётчик единиц
-		int unitsCounter(const std::string& input) {
+		int unitsCounter(const string& input) {
 			int unitCnt = 0;
 			int prevNumber = -1;
 
-			std::stringstream ss(input);
-			std::string token;
+			stringstream ss(input);
+			string token;
 
 			while (ss >> token) {
-				int number = std::stoi(token);
+				int number = stoi(token);
 
 				if (number == 1) {
 					unitCnt++;
@@ -621,7 +621,6 @@ namespace UniLab1 {
 		// Кнопка выбора первой рекурсивной формулы
 		private: System::Void radioBtn1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		    validityCheckFor1();
-
 		    if (this->radioBtn1->Checked == true) {
 		        this->formulaLabel->Text = "F(n) = 2, при n <= 1;\r\nF(n) = 1 + F(n - 1) * F(n - 2) - F(n - 1) - F(n - 2), если n > 1 и при этом n нечётно;\r\nF(n) = 2 * F(n - 1), если n > 1 и при этом n чётно";
 		        choiceСheck = true;
@@ -633,7 +632,6 @@ namespace UniLab1 {
 		// Кнопка выбора второй рекурсивной функции
 		private: System::Void radioBtn2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		    validityCheckFor2();
-
 		    if (this->radioBtn2->Checked == true) {
 		        this->formulaLabel->Text = "F(n) = 1, при n = 1;\r\nF(n) = 2, при n = 2;\r\nF(n) = [(7 * n + F(n - 3)) / 9], если n > 2 и при этом n чётно;\r\nF(n) = [(5 * n + F(n - 1) + F(n - 2)) / 7], если n > 2 и при этом n нечётно";
 		        choiceСheck = false;
@@ -644,9 +642,6 @@ namespace UniLab1 {
 
 		// Кнопка запуска первой программы
 		private: System::Void startBtn1_Click(System::Object^ sender, System::EventArgs^ e) {
-		    static int count = 0; // Определим переменную count как static внутри функции
-		    count = 0;
-
 		    if (this->textField1->Text == "") {
 		        MessageBox::Show("Введите значение в \"Поле ввода\" для начала подсчета.", "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		        return;
@@ -663,7 +658,7 @@ namespace UniLab1 {
 		    } else if (this->radioBtn2->Checked) {
 		        this->resultNum->Text = System::Convert::ToString(recursion2(n));
 		    }
-		    this->countNum->Text = System::Convert::ToString(count);
+			this->countNum->Text = System::Convert::ToString(count);
 		}
 
 		// Кнопка очистки полей первой программы
@@ -700,7 +695,7 @@ namespace UniLab1 {
 
 		// Кнопка запуска второй программы
 		private: System::Void startBtn2_Click(System::Object^ sender, System::EventArgs^ e) {
-		    std::string output = msclr::interop::marshal_as<std::string>(inputLabel->Text);
+		    string output = msclr::interop::marshal_as<string>(inputLabel->Text);
 		    int count = unitsCounter(output);
 		    this->outputLabel->Text = System::Convert::ToString(count);
 		}
@@ -736,8 +731,7 @@ namespace UniLab1 {
 		// -- [ ТЕСТЫ ] --
 
 		// Тест работы первой рекурсивной функции
-		int testRecursion1()
-		{
+		int testRecursion1() {
 			if (recursion1(5) == 10) {
 				return 0;
 			} else {
@@ -746,8 +740,7 @@ namespace UniLab1 {
 		}
 
 		// Тест работы второй рекурсивной функции
-		int testRecursion2()
-		{
+		int testRecursion2() {
 			if (recursion2(5) == 4) {
 				return 0;
 			} else {
@@ -756,8 +749,7 @@ namespace UniLab1 {
 		}
 
 		// Тест перегрузки первой функции
-		int testOverflow1()
-		{
+		int testOverflow1() {
 			recursion1(31);
 			if (validityCheckFor1() == 0) {
 				return 0;
@@ -767,8 +759,7 @@ namespace UniLab1 {
 		}
 
 		// Тест перегрузки второй функции
-		int testOverflow2()
-		{
+		int testOverflow2() {
 			recursion2(81);
 			if (validityCheckFor2() == 0) {
 				return 0;
@@ -778,8 +769,7 @@ namespace UniLab1 {
 		}
 
 		// Тест для второй программы
-		int testUnitsCounter()
-		{
+		int testUnitsCounter() {
 			string input1 = "1 1 0 0 1 1";
 			string input2 = "1 0 1 0 0 1";
 			string input3 = "1 1 1 0 1 1";

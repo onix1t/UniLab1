@@ -21,13 +21,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bca4575-f966-4130-bf0e-ba74a0ed7a68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.UniLab1/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.UniLab1/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.UniLab1/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.UniLab1/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniLab1/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniLab1/MainForm.h" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/MainForm.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniLab1/UniLab1.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/UniLab1.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/.cmake/api/v1/reply/cache-v2-55e504e61ddc439e95f5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/.cmake/api/v1/reply/cmakeFiles-v1-223dd71d45a18540e728.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/.cmake/api/v1/reply/codemodel-v2-cc1e6b56875cb1fc4788.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/.cmake/api/v1/reply/directory-.-Release-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/.cmake/api/v1/reply/index-2024-04-19T18-20-10-0117.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/.cmake/api/v1/reply/target-UniLab1-Release-5c64967cc2bef332bc56.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/.cmake/api/v1/reply/toolchains-v1-1177537e47f83e8473c7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/clion-Release-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniLab1/cmake-build-release/CMakeFiles/rules.ninja" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +99,11 @@
   }
 }</component>
   <component name="RunManager" selected="CMake Debug.Debug">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Debug" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory">
       <method v="2" />
     </configuration>
@@ -95,8 +113,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Debug.Debug" />
       <item itemvalue="CMake Application.UniLab1" />
+      <item itemvalue="CMake Debug.Debug" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -112,6 +130,7 @@
       <workItem from="1713549240104" duration="145000" />
       <workItem from="1713549392788" duration="1414000" />
       <workItem from="1714245329585" duration="356000" />
+      <workItem from="1718054966288" duration="20000" />
     </task>
     <servers />
   </component>
